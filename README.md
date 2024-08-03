@@ -1,3 +1,17 @@
+## `strategy.py`
+Your goal is to write a `play` function. It takes a game instance and returns the secret word.
+
+```py
+from engine import Game, KNOWN_WORDS, compare_words
+
+
+def play(game: Game) -> str:
+  """
+  Plays the game and finds the secret word.
+  """
+  # Your code here
+```
+
 ## `engine.py`
 
 Provides the game essentials:
@@ -35,20 +49,6 @@ class Game:
   
   def num_guesses_made(self):
     return self.__guesses_made
-```
-
-## `strategy.py`
-Your goal is to write a `play` function. It takes a game instance and returns the secret word.
-
-```py
-from engine import Game, KNOWN_WORDS, compare_words
-
-
-def play(game: Game) -> str:
-  """
-  Plays the game and finds the secret word.
-  """
-  # Your code here
 ```
 
 ## `main.py`
