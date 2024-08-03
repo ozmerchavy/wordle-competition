@@ -48,7 +48,7 @@ export class Game {
   }
 }
 
-function __test() {
+function __test_engine() {
   console.log("testing the engine...");
 
   console.assert(compareWords("hello", "kelly") === "⬜🟩🟩🟩⬜");
@@ -66,5 +66,3 @@ function __test() {
 
   console.log("engine tests passed :)");
 }
-
-__test();

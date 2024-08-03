@@ -11,6 +11,7 @@ function measureStrategy({ N = 100 } = {}) {
     const game = new Game();
     if (play(game) !== game.secretWord) throw new Error('Strategy failed');
     listNumGuesses.push(game.numGuessesMade());
+    console.log(`Game ${listNumGuesses.length} completed in ${game.numGuessesMade()} guesses`);
   }
 
   console.log(`
