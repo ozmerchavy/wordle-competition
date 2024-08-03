@@ -43,6 +43,9 @@ class Game:
   
   
   def make_a_guess(self, guess: str):
+    """
+    returns a pattern such as "🟩🟨🟨⬜⬜"
+    """
     self.__guesses_made += 1
     return compare_words(guess, self.__secret_word)
 

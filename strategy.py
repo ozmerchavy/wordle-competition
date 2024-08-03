@@ -13,8 +13,6 @@ def play(game: Game) -> str:
     result_pattern = game.make_a_guess(guess)
     
     if result_pattern == "🟩🟩🟩🟩🟩":
-      break
+      return guess
     
     candidates = [word for word in candidates if compare_words(guess, word) == result_pattern]
-
-  return guess
