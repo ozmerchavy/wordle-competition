@@ -16,7 +16,7 @@ def compare_words(guess: str, secret: str) -> str:
   >>> compare_words("hello", "kohen") == "🟨🟨⬜⬜🟨"
   """
   assert len(guess) == len(secret) == 5
-  
+
   guess = list(guess)
   secret = list(secret)
   
@@ -27,9 +27,9 @@ def compare_words(guess: str, secret: str) -> str:
       guess[idx] = "_"
       secret[idx] = "_"
       result[idx] = CORRECT_LETTER__CORRECT_INDEX
-  
-  for idx, letter in enumerate(guess):    
-    if letter in secret:
+      
+  for idx, letter in enumerate(guess):
+    if letter != "_" and letter in secret:
       secret[secret.index(letter)] = "_"
       result[idx] = CORRECT_LETTER__WRONG_INDEX
   
@@ -42,7 +42,7 @@ class Game:
     self.__guesses_made = 0
   
   
-  def make_a_guess(self, guess):
+  def make_a_guess(self, guess: str):
     self.__guesses_made += 1
     return compare_words(guess, self.__secret_word)
 
@@ -54,6 +54,9 @@ class Game:
 
 def __test():
   print("testing the engine...")
+  
+  assert compare_words("hello", "kelly") == "⬜🟩🟩🟩⬜"
+  assert compare_words("hello", "kohen") == "🟨🟨⬜⬜🟨"
   
   game = Game()
   game._Game__secret_word = "hello"
